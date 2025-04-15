@@ -1,0 +1,118 @@
+
+
+.contact-title {
+    font-size: 28px;
+    color: #333;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.contact-form .form-group {
+    margin-bottom: 30px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 18px;
+    width: 30%;
+    text-align: left;
+}
+
+.contact-form label::after {
+    content: "※";
+    color: red;
+    margin-left: 5px;
+}
+
+.gender-inputs div {
+    font-size: 15px;
+    text-align: left;
+}
+
+.contact-form .form-group.required label::after {
+    content: "※";
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-form input[type="radio"],
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="password"],
+.contact-form select,
+.contact-form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.name-inputs,
+.phone-inputs {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.hyphen {
+    margin: 0.5px;
+    align-items: center;
+}
+
+.gender-option {
+    width: 70%;
+    display: flex;
+    justify-content: left;
+}
+
+.gender-option[type="radio"] {
+    transform: 1.5;
+}
+
+.gender-inputs {
+    width: 70%;
+    display: inline-flex;
+    gap: 10px;
+}
+
+.gender-inputs input {
+    margin: 5px;
+    padding: 0 10px 0 10px;
+}
+
+.contact-form textarea {
+    min-height: 100px;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+}
+.contact-form button[type="submit"] {
+    background-color: #777;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 180px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #555;
+}
