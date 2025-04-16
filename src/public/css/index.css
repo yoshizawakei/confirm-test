@@ -33,11 +33,6 @@
     margin-left: 5px;
 }
 
-.gender-inputs div {
-    font-size: 15px;
-    text-align: left;
-}
-
 .contact-form .form-group.required label::after {
     content: "※";
 }
@@ -97,6 +92,11 @@
 
 .contact-form textarea {
     min-height: 100px;
+}
+
+.gender-inputs div {
+    font-size: 15px;
+    text-align: left;
 }
 
 .form__button {
