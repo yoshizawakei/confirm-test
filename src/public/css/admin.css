@@ -1,0 +1,124 @@
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-actions {
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.search-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.search-fields input[type="text"],
+.search-fields select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.item {
+    width: 30%;
+}
+
+.sex {
+    width: 10%;
+}
+
+.inquiry {
+    width: 25%;
+}
+
+.date {
+    width: 15%;
+}
+
+.search-button,
+.reset-button {
+    padding: 8px 15px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10%;
+}
+
+.export {
+    margin-bottom: 10px;
+}
+
+.export-button {
+    padding: 8px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.pagination {
+    text-align: right;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination .current {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.details-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

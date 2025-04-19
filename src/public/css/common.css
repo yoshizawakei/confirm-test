@@ -30,13 +30,34 @@ body {
     margin: 0;
 }
 
-.login {
+.register {
     color: #333;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 8px 25px;
     border: 1px solid #333;
     border-radius: 3px;
     font-size: 0.9em;
+    margin-right: 40px;
+}
+
+.login {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 40px;
+}
+
+.logout {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 40px;
 }
 
 

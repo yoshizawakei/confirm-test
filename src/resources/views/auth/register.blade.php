@@ -5,6 +5,15 @@
 @endsection
 
 @section("content")
+<header class="header">
+    <div class="header__inner">
+        <a href="#" class="logo">FashionablyLate</a>
+    </div>
+    <div class="header__link">
+        <a href="#" class="login">login</a>
+    </div>
+</header>
+<main>
     <h2 class="register-header">Register</h2>
     <div class="register">
         <form class="register-form">
@@ -26,4 +35,5 @@
             </div>
         </form>
     </div>
+</main>
 @endsection
