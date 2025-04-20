@@ -7,7 +7,7 @@
 @section("content")
     <h2 class="contact-title">Contact</h2>
     <div class="contact-form-wrapper">
-        <form class="contact-form">
+        <form class="contact-form" action="/confirm" method="POST">
             @csrf
             <div class="form-group required">
                 <label for="name">お名前</label>
@@ -59,10 +59,7 @@
                 <label for="inquiry_type">お問い合わせの種類</label>
                 <select id="inquiry_type" name="inquiry_type">
                     <option value="" disabled selected>選択してください</option>
-                    <option value="product">製品について</option>
-                    <option value="order">ご注文について</option>
-                    <option value="shipping">配送について</option>
-                    <option value="other">その他</option>
+                    <option value="product_exchange">商品の交換について</option>
                 </select>
             </div>
             <div class="form-group required">
