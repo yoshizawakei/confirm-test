@@ -20,15 +20,15 @@
                 <label>性別</label>
                 <div class="gender-inputs">
                     <div class="gender-option">
-                        <input type="radio" name="gender" value="male" checked>
+                        <input type="radio" name="gender" value="男" checked>
                         <div>男性</div>
                     </div>
                     <div class="gender-option">
-                        <input type="radio" name="gender" value="female">
+                        <input type="radio" name="gender" value="女">
                         <div>女性</div>
                     </div>
                     <div class="gender-option">
-                        <input type="radio" name="gender" value="other">
+                        <input type="radio" name="gender" value="その他">
                         <div>その他</div>
                     </div>
                 </div>
@@ -59,12 +59,12 @@
                 <label for="inquiry_type">お問い合わせの種類</label>
                 <select id="inquiry_type" name="inquiry_type">
                     <option value="" disabled selected>選択してください</option>
-                    <option value="product_exchange">商品の交換について</option>
+                    <option value="商品の交換について">商品の交換について</option>
                 </select>
             </div>
             <div class="form-group required">
                 <label for="inquiry_content">お問い合わせ内容</label>
-                <textarea id="inquiry_content" name="inquiry_content" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                <textarea id="inquiry_content" name="detail" placeholder="お問い合わせ内容をご記入ください"></textarea>
             </div>
             <div class="form__button">
                 <button type="submit" class="confirm-button">確認画面</button>

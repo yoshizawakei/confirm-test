@@ -55,6 +55,35 @@
     border: none;
 }
 
+/* .form-item-td {
+    display: flex;
+    width: 10px;
+} */
+
+/* td内の全てのinputタグの枠線を消す */
+.confirm-form td input {
+    border: none;
+    /* 枠線をなくす */
+    background-color: transparent;
+    /* 背景を透明にする（必要に応じて） */
+    padding: 10px 0;
+    /* 上下のpaddingを調整 */
+    font-size: 20px;
+    /* フォントサイズをtdに合わせる */
+    color: #333;
+    /* 文字色をtdに合わせる */
+    width: 100%;
+    /* 幅をtdいっぱいに広げる */
+    box-sizing: border-box;
+    /* paddingを含めて幅を計算 */
+}
+
+/* 電話番号のinputタグの幅を調整 */
+.confirm-form .form-item td input[type="text"]:not(:first-child) {
+    width: calc((100% - 20px) / 3);
+    /* 幅を再調整 */
+}
+
 .form-item{
     height: 70px;
 }

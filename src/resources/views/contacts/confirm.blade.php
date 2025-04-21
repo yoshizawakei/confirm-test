@@ -8,12 +8,15 @@
 @section("content")
     <h2 class="confirm-title">Confirm</h2>
     <div class="confirm-form-wrapper">
-        <form class="confirm-form">
+        <form class="confirm-form" action="/contacts" method="post">
+            @csrf
             <table class="confirm-table">
                 <tr class="form-item">
                     <th>お名前</th>
-                    <td><input type="text" id="name" name="name_first" value="{{ $contact["name_first"] }}" readonly></td>
-                    <td><input type="text" name="name_last" value="{{ $contact["name_last"] }}" readonly></td>
+                    <div class="form-item-td">
+                        <td><input type="text" id="name" name="name_first" value="{{ $contact["name_first"] }}" readonly></td>
+                        <td><input type="text" name="name_last" value="{{ $contact["name_last"] }}" readonly></td>
+                    </div>
                 </tr>
                 <tr class="form-item">
                     <th>性別</th>
@@ -25,9 +28,7 @@
                 </tr>
                 <tr class="form-item">
                     <th>電話番号</th>
-                    <td><input type="text" name="phone1" value="{{ $contact["phone1"] }}" readonly></td>
-                    <td><input type="text" name="phone2" value="{{ $contact["phone2"] }}" readonly></td>
-                    <td><input type="text" name="phone3" value="{{ $contact["phone3"] }}" readonly></td>
+                    <td><input type="text" name="tel" value="{{ $contact["phone1"] . $contact["phone2"] . $contact["phone3"] }}" readonly></td>
                 </tr>
                 <tr class="form-item">
                     <th>住所</th>
@@ -43,7 +44,7 @@
                 </tr>
                 <tr class="form-item inquiry-content">
                     <th>お問い合わせ内容</th>
-                    <td><input type="text" name="inquiry_content" value="{{ $contact["inquiry_content"] }}" readonly></td>
+                    <td><input type="text" name="detail" value="{{ $contact["detail"] }}" readonly></td>
                 </tr>
             </table>
             <div class="button-group">
