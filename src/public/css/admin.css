@@ -12,26 +12,52 @@ h2 {
 }
 
 .header-actions {
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: 20px;
+    max-width: 1000px;
 }
 
 .search-fields {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.reset-fields {
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
 .search-fields input[type="text"],
-.search-fields select {
-    padding: 8px;
+.search-fields input[type="date"],
+.search-fields select,
+.search-fields button {
+    padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.reset-fields button {
+    padding: 8px 15px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    box-sizing: border-box;
 }
 
 .item {
-    width: 30%;
+    width: 35%;
 }
 
 .sex {
@@ -39,22 +65,31 @@ h2 {
 }
 
 .inquiry {
-    width: 25%;
+    width: 20%;
 }
 
 .date {
     width: 15%;
 }
 
-.search-button,
+.search-button {
+    width: 10%;
+    padding: 8px 15px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
 .reset-button {
+    width: auto;
     padding: 8px 15px;
     background-color: #ddd;
     color: #333;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 10%;
+    height: 50px;
+    box-sizing: border-box;
+
 }
 
 .export {
@@ -63,7 +98,7 @@ h2 {
 
 .export-button {
     padding: 8px 15px;
-    background-color: #5cb85c;
+    background-color: #333;
     color: white;
     border: none;
     border-radius: 4px;
@@ -79,14 +114,15 @@ h2 {
 
 table {
     width: 100%;
+    border: 1px solid #ddd;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px 10px;
+    padding-left: 40px;
     text-align: left;
 }
 
@@ -94,31 +130,183 @@ th {
     background-color: #f0f0f0;
 }
 
-.pagination {
-    text-align: right;
-}
-
-.pagination a {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
-}
-
-.pagination .current {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
 .details-button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #333;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
+
+.pagination {
+    text-align: right;
+}
+
+.pagination ul {
+    display: inline-flex;
+    /* 横並びにする */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 35px;
+    /* 幅を固定 */
+    height: 35px;
+    /* 高さを固定 */
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.pagination li a:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+}
+
+.pagination li.active span {
+    background-color: #495057;
+    color: white;
+    border-color: #495057;
+}
+
+.pagination li.disabled span,
+.pagination li.disabled a {
+    color: #adb5bd;
+    background-color: #f8f9fa;
+    border-color: #ccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+/* モーダル Styles (CSS only) */
+.modal-css {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.details-button-css {
+    display: block;
+    padding: 6px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.modal-css__content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* モーダルヘッダーのスタイル */
+.modal-css__header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-css__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+}
+
+.modal-css__close:hover {
+    color: #000;
+}
+
+/* モーダルボディのスタイル */
+.modal-css__body {
+    padding: 20px;
+}
+
+.modal-css__body table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modal-css__item {
+    width: 100%;
+    display: table-row;
+}
+
+.modal-css__label,
+.model-css__value {
+    display: table-cell;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.modal-css__label {
+    width: 200px;
+    font-weight: bold;
+    color: #555;
+    padding-right: 20px;
+}
+
+.modal-css__inquiry-body {
+    white-space: pre-wrap;
+    /* 改行を保持して表示 */
+}
+
+/* モーダルフッターのスタイル */
+.modal-css__footer {
+    padding: 15px;
+    text-align: center;
+    /* ボタンを右寄せにする */
+}
+
+/* 削除ボタンのスタイル */
+.modal-css__delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.modal-css__delete-button:hover {
+    background-color: #c82333;
+}
+
+/* :target 擬似クラスでモーダルを表示 */
+.modal-css:target {
+    display: block;
+}
+

@@ -10,16 +10,17 @@
         <a href="#" class="logo">FashionablyLate</a>
     </div>
     <div class="header__link">
-        <a href="#" class="register">register</a>
+        <a href="/register" class="register">register</a>
     </div>
 </header>
 <main>
 <h2 class="login-header">Login</h2>
 <div class="login">
-    <form class="login-form">
+    <form class="login-form" action="/login" method="POST">
+        @csrf
         <div class="form-group">
             <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" placeholder="例：mail@example.com">
+            <input type="email" id="email" name="email" value="{{ old("email") }}" placeholder="例：mail@example.com">
         </div>
         <div class="form-group">
             <label for="password">パスワード</label>

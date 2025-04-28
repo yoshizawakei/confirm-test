@@ -10,42 +10,48 @@
         <a href="#" class="logo">FashionablyLate</a>
     </div>
     <div class="header__link">
-        <a href="#" class="logout">logout</a>
+        <form action="/logout" method="post">
+            @csrf
+            <button class="logout">logout</button>
+        </form>
     </div>
 </header>
 <div class="container">
     <h2 class="admin-header">Admin</h2>
     <div class="header-actions">
-        <div class="search-fields">
-            <input class="item" type="text" placeholder="名前やメールアドレスを入力してください">
-            <select class="sex">
+        <form action="/admin/search" method="GET" class="search-fields">
+            @csrf
+            <input class="item" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old("keyword") }}">
+
+            <select class="sex" name="gender">
                 <option value="">性別</option>
-                <option value="male">男性</option>
-                <option value="female">女性</option>
-                <option value="other">その他</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="その他" >その他</option>
             </select>
-            <select class="inquiry">
+
+            <select class="inquiry" name="inquiry_type">
                 <option value="">お問い合わせの種類</option>
-                <option value="product">商品の交換について</option>
-                <option value="other">その他</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category["id"] }}">{{ $category["content"] }}</option>
+                @endforeach
             </select>
-            <input class="date" type="date">
-            <button class="search-button">検索</button>
-            <button class="reset-button">リセット</button>
-        </div>
+
+            <input class="date" type="date" name="search_date" value="search_date">
+
+            <button class="search-button" type="submit">検索</button>
+        </form>
+        <form action="/admin/reset" method="GET" class="reset-fields">
+            @csrf
+            <button class="reset-button" type="submit">リセット</button>
+        </form>
     </div>
     <div class="table-actions">
-        <div class="export">
-            <button class="export-button">エクスポート</button>
-        </div>
+        <form action="/admin/export" class="export" >
+            <button type="submit" class="export-button">エクスポート</button>
+        </form>
         <div class="pagination">
-            <a href="#">&lt;</a>
-            <a href="#" class="current">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">&gt;</a>
+            {{ $contacts->appends(request()->except("page"))->links() }}
         </div>
     </div>
 
@@ -60,14 +66,69 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>山田 太郎</td>
-                <td>男性</td>
-                <td>test@example.com</td>
-                <td>商品の交換について</td>
-                <td><button class="details-button">詳細</button></td>
-            </tr>
+            @foreach ($contacts as $contact)
+                <tr>
+                    <td>{{ $contact["name_last"] . " " . $contact["name_first"] }}</td>
+                    <td>{{ $contact["gender"] }}</td>
+                    <td>{{ $contact["email"] }}</td>
+                    <td>{{ $contact->category->content }}</td>
+                    <td>
+                        <a href="#modal-{{ $contact->id }}" class="details-button-css">詳細</a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
+
+<!-- モーダルの内容 -->
+    @foreach ($contacts as $contact)
+    <div id="modal-{{ $contact->id }}" class="modal-css">
+        <div class="modal-css__content">
+            <div class="modal-css__header">
+                <a href="#" class="modal-css__close">&times;</a>
+            </div>
+            <table class="modal-css__body">
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">お名前</th>
+                    <td class="modal-css__value">{{ $contact["name_last"] . "  " . $contact["name_first"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">性別</th>
+                    <td class="modal-css__value">{{ $contact["gender"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">メールアドレス</th>
+                    <td class="modal-css__value">{{ $contact["email"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">電話番号</th>
+                    <td class="modal-css__value">{{ $contact["tel"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">住所</th>
+                    <td class="modal-css__value">{{ $contact["address"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">建物名</th>
+                    <td class="modal-css__value">{{ $contact["building"] }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">お問い合わせの種類</th>
+                    <td class="modal-css__value">{{ $contact->category->content }}</td>
+                </tr>
+                <tr class="modal-css__item">
+                    <th class="modal-css__label">お問い合わせ内容</th>
+                    <td class="modal-css__value modal-css__inquiry-body">{{ $contact["detail"] }}</td>
+                </tr>
+            </table>
+            <div class="modal-css__footer">
+                <form action="/delete" method="post">
+                    @csrf
+                    <button type="submit" class="modal-css__delete-button">削除</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection

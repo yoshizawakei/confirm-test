@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
@@ -18,20 +19,11 @@ Route::get("/", [ContactController::class, "index"]);
 Route::post("/confirm", [ContactController::class, "confirm"]);
 Route::post("/contacts", [ContactController::class, "store"]);
 
-
-Route::get("/thanks", [ContactController::class, "thanks"]);
-
-Route::get("/register", function()
-{
-    return view("auth.register");
+Route::middleware("auth")->group(function () {
+    
 });
-
-Route::get("/login", function()
-{
-    return view("auth.login");
-});
-
-Route::get("/admin", function()
-{
-    return view("admin.index");
-});
+Route::get("/admin", [AuthController::class, "index"]);
+Route::post("/logout", [AuthController::class, "logout"]);
+Route::get("/admin/search", [AuthController::class, "search"]);
+Route::get("/admin/reset", [AuthController::class, "reset"]);
+Route::post("/admin/contacts/{contact}/details", [AuthController::class, "showContactDetails"])->name("admin.contacts.details");
