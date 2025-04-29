@@ -112,21 +112,21 @@ h2 {
     margin-bottom: 10px;
 }
 
-table {
+.table {
     width: 100%;
     border: 1px solid #ddd;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
 
-th,
-td {
+.table-th,
+.table-td {
     padding: 20px 10px;
     padding-left: 40px;
     text-align: left;
 }
 
-th {
+.table-th {
     background-color: #f0f0f0;
 }
 
@@ -222,10 +222,10 @@ th {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 700px;
+    padding: 30px;
     border-radius: 2px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 /* モーダルヘッダーのスタイル */
@@ -249,11 +249,11 @@ th {
 }
 
 /* モーダルボディのスタイル */
-.modal-css__body {
+.modal-css__table {
     padding: 20px;
 }
 
-.modal-css__body table {
+.modal-css__table table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -266,16 +266,18 @@ th {
 .modal-css__label,
 .model-css__value {
     display: table-cell;
-    padding: 8px 10px;
+    padding: 20px 10px;
+    padding-left: 30px;
     text-align: left;
     vertical-align: top;
+    align-items: top;
 }
 
 .modal-css__label {
     width: 200px;
     font-weight: bold;
     color: #555;
-    padding-right: 20px;
+    margin-right: 20px;
 }
 
 .modal-css__inquiry-body {
@@ -287,6 +289,7 @@ th {
 .modal-css__footer {
     padding: 15px;
     text-align: center;
+    margin-top: 40px;
     /* ボタンを右寄せにする */
 }
 

@@ -1,5 +1,3 @@
-
-
 .contact-title {
     font-size: 28px;
     color: #333;
@@ -17,6 +15,10 @@
 
 .contact-form .form-group {
     margin-bottom: 30px;
+    display: flex;
+    /* label と input-area を横並びにする */
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .contact-form label {
@@ -37,10 +39,24 @@
     content: "※";
 }
 
-.form-group {
+.input-area {
+    width: 70%;
+    /* インプット要素とエラーメッセージをまとめる */
+}
+
+.name-inputs,
+.phone-inputs {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     width: 100%;
+    margin-bottom: 2px;
+    /* インプット間の余白 */
+}
+
+.hyphen {
+    margin: 0 5px;
+    line-height: 2;
 }
 
 .contact-form input[type="radio"],
@@ -49,60 +65,59 @@
 .contact-form input[type="password"],
 .contact-form select,
 .contact-form textarea {
-    width: 70%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 2px;
     font-size: 16px;
-}
-
-.name-inputs,
-.phone-inputs {
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.hyphen {
-    margin: 0.5px;
-    align-items: center;
-}
-
-.gender-option {
-    width: 70%;
-    display: flex;
-    justify-content: left;
-}
-
-.gender-option[type="radio"] {
-    transform: 1.5;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    /* インプット要素の下の余白 */
+    display: block;
+    /* 念のためブロック要素にする */
 }
 
 .gender-inputs {
-    width: 70%;
-    display: inline-flex;
-    gap: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2px;
 }
 
-.gender-inputs input {
-    margin: 5px;
-    padding: 0 10px 0 10px;
+.gender-option {
+    display: flex;
+    margin-right: 5px;
+}
+
+.gender-option input[type="radio"] {
+    width: 20%;
+}
+
+.gender-inputs div {
+    font-size: 16px;
+    width: 80%;
 }
 
 .contact-form textarea {
     min-height: 100px;
 }
 
-.gender-inputs div {
-    font-size: 15px;
+.form__error {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+    display: block;
+    width: 100%;
     text-align: left;
 }
 
 .form__button {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
+
 .contact-form button[type="submit"] {
     background-color: #777;
     color: #fff;

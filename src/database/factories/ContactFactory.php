@@ -21,10 +21,10 @@ class ContactFactory extends Factory
             'name_last' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail,
             'tel' => $this->faker->numerify("090########"),
-            'address' => $this->faker->address,
+            'address' =>$this->faker->prefecture . $this->faker->city . $this->faker->streetAddress, // これらを結合して住所とする,
             'building' => $this->faker->secondaryAddress,
             'gender' => $this->faker->randomElement($genders),
-            'detail' => $this->faker->text(120),
+            'detail' => $this->faker->realText(120),
             'created_at' => now(),
             'updated_at' => now(),
         ];

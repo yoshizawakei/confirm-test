@@ -58,5 +58,11 @@ class AuthController extends Controller
         return view("admin.index", ["contacts" => Contact::with("category")->paginate(7), "categories" => Category::all()->toArray(), "model_contact" =>$contact]);
     }
 
+    public function destroy(Request $request)
+    {
+        Contact::find($request->id)->delete();
+        return redirect("/admin");
+    }
+
 
 }

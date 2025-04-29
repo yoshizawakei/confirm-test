@@ -17,7 +17,9 @@ use App\Http\Controllers\ContactController;
 
 Route::get("/", [ContactController::class, "index"]);
 Route::post("/confirm", [ContactController::class, "confirm"]);
+Route::get("/contacts/edit", [ContactController::class, "edit"]);
 Route::post("/contacts", [ContactController::class, "store"]);
+
 
 Route::middleware("auth")->group(function () {
     
@@ -27,3 +29,4 @@ Route::post("/logout", [AuthController::class, "logout"]);
 Route::get("/admin/search", [AuthController::class, "search"]);
 Route::get("/admin/reset", [AuthController::class, "reset"]);
 Route::post("/admin/contacts/{contact}/details", [AuthController::class, "showContactDetails"])->name("admin.contacts.details");
+Route::delete("/delete", [AuthController::class, "destroy"]);

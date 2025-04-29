@@ -55,24 +55,24 @@
         </div>
     </div>
 
-    <table>
+    <table class="table">
         <thead>
-            <tr>
-                <th>お名前</th>
-                <th>性別</th>
-                <th>メールアドレス</th>
-                <th>お問い合わせの種類</th>
-                <th></th>
+            <tr class="table-tr">
+                <th class="table-th">お名前</th>
+                <th class="table-th">性別</th>
+                <th class="table-th">メールアドレス</th>
+                <th class="table-th">お問い合わせの種類</th>
+                <th class="table-th"></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($contacts as $contact)
-                <tr>
-                    <td>{{ $contact["name_last"] . " " . $contact["name_first"] }}</td>
-                    <td>{{ $contact["gender"] }}</td>
-                    <td>{{ $contact["email"] }}</td>
-                    <td>{{ $contact->category->content }}</td>
-                    <td>
+                <tr class="table-tr">
+                    <td class="table-td">{{ $contact["name_last"] . " " . $contact["name_first"] }}</td>
+                    <td class="table-td">{{ $contact["gender"] }}</td>
+                    <td class="table-td">{{ $contact["email"] }}</td>
+                    <td class="table-td">{{ $contact->category->content }}</td>
+                    <td class="table-td">
                         <a href="#modal-{{ $contact->id }}" class="details-button-css">詳細</a>
                     </td>
                 </tr>
@@ -87,7 +87,7 @@
             <div class="modal-css__header">
                 <a href="#" class="modal-css__close">&times;</a>
             </div>
-            <table class="modal-css__body">
+            <table class="modal-css__table">
                 <tr class="modal-css__item">
                     <th class="modal-css__label">お名前</th>
                     <td class="modal-css__value">{{ $contact["name_last"] . "  " . $contact["name_first"] }}</td>
@@ -123,7 +123,9 @@
             </table>
             <div class="modal-css__footer">
                 <form action="/delete" method="post">
+                    @method("delete")
                     @csrf
+                    <input type="hidden" name="id" value="{{ $contact->id }}">
                     <button type="submit" class="modal-css__delete-button">削除</button>
                 </form>
             </div>

@@ -40,7 +40,7 @@
                 </tr>
                 <tr class="form-item">
                     <th>お問い合わせの種類</th>
-                    <td><input type="text" name="inquiry_type" value="{{ $contact["inquiry_type"] }}" readonly></td>
+                    <td><input type="text" name="category_id" value="{{ $contact["category_id"] }}" readonly></td>
                 </tr>
                 <tr class="form-item inquiry-content">
                     <th>お問い合わせ内容</th>
