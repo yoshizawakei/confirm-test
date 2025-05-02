@@ -18,19 +18,31 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->all();
-        $contact['category_id'] = Category::find($contact['category_id'])->content;
-        return view('contacts.confirm', compact('contact'));
+        $validated = $request->validated();
+        $validated["tel"] = $validated["phone1"] . $validated["phone2"] .  $validated["phone3"];
+        session(["validatedContact" => $validated]);
+        $contactData = $validated;
+        $categoryName = Category::find($contactData['category_id'])->content;
+        return view('contacts.confirm', compact('contactData', 'categoryName'));
     }
 
     public function store(Request $request)
     {
-        $contact = request()->all();
-        $contact['category_id'] = Category::where("content", $contact['category_id'])->first()->id;
-        Contact::create($contact);
-        return view("contacts.thanks");
+        if ($request->input("action") === "send") {
+            $validatedContact = session("validatedContact");
+            if (!$validatedContact) {
+                return redirect("contacts.index");
+            }
+            Contact::create($validatedContact);
+            session()->forget("validatedContact");
+            return view("contacts.thanks");
+        } elseif($request->input("action") === "back") {
+            $validatedContact = session("validatedContact");
+            if (!$validatedContact) {
+                return redirect("contacts.index");
+            }
+            $categories = Category::all();
+            return view('contacts.index', compact('validatedContact', 'categories'));
+        }
     }
-
-
-
 }

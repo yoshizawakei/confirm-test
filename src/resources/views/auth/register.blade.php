@@ -21,23 +21,29 @@
                 <div class="form-group">
                     <label for="name">お名前</label>
                     <input type="text" id="name" name="name" value="{{ old("name") }}" placeholder="例：山田 太郎">
-                    @error('name')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
+                    <div class="error">
+                        @error('name')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
                     <input type="email" id="email" name="email" value="{{ old("email") }}" placeholder="例：mail@example.com">
-                    @error('email')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
+                    <div class="error">
+                        @error('email')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
                     <input type="password" id="password" name="password"  placeholder="半角英数字で入力">
-                    @error('password')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
+                    <div class="error">
+                        @error('password')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
                 <div class="button">
                     <button type="submit" class="register-button">登録</button>

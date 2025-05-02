@@ -17,14 +17,14 @@ use App\Http\Controllers\ContactController;
 
 Route::get("/", [ContactController::class, "index"]);
 Route::post("/confirm", [ContactController::class, "confirm"]);
-Route::get("/contacts/edit", [ContactController::class, "edit"]);
 Route::post("/contacts", [ContactController::class, "store"]);
+Route::get("/contacts", [ContactController::class, "index"]);
+
 
 
 Route::middleware("auth")->group(function () {
-    
+    Route::get("/admin", [AuthController::class, "index"]);
 });
-Route::get("/admin", [AuthController::class, "index"]);
 Route::post("/logout", [AuthController::class, "logout"]);
 Route::get("/admin/search", [AuthController::class, "search"]);
 Route::get("/admin/reset", [AuthController::class, "reset"]);

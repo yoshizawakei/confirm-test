@@ -13,8 +13,8 @@
                 <label for="name">お名前</label>
                 <div class="input-area">
                     <div class="name-inputs">
-                        <input type="text" id="name" name="name_first" placeholder="例：山田" value="{{ old('name_first') }}">
-                        <input type="text" name="name_last" placeholder="例：太郎" value="{{ old('name_last') }}">
+                        <input type="text" id="name" name="name_first" placeholder="例：山田" value="{{ old('name_first', $validatedContact['name_first'] ?? '') }}">
+                        <input type="text" name="name_last" placeholder="例：太郎" value="{{ old('name_last', $validatedContact['name_last'] ?? '') }}">
                     </div>
                     <div class="form__error">
                         @error("name_first")
@@ -55,7 +55,7 @@
             <div class="form-group required">
                 <label for="email">メールアドレス</label>
                 <div class="input-area">
-                    <input type="email" id="email" name="email" placeholder="例：mail@example.com" value="{{ old('email') }}">
+                    <input type="email" id="email" name="email" placeholder="例：mail@example.com" value="{{ old('email', $validatedContact['email'] ?? '') }}">
                     <div class="form__error">
                         @error("email")
                             {{ $message }}
@@ -67,11 +67,11 @@
                 <label for="phone">電話番号</label>
                 <div class="input-area">
                     <div class="phone-inputs">
-                        <input type="text" name="phone1" placeholder="(例) 090" value="{{ old('phone1') }}">
+                        <input type="text" name="phone1" placeholder="(例) 090" value="{{ old('phone1', $validatedContact['phone1'] ?? '') }}">
                         <span class="hyphen">-</span>
-                        <input type="text" name="phone2" placeholder="(例) 1234" value="{{ old('phone2') }}">
+                        <input type="text" name="phone2" placeholder="(例) 1234" value="{{ old('phone2', $validatedContact['phone2'] ?? '') }}">
                         <span class="hyphen">-</span>
-                        <input type="text" name="phone3" placeholder="(例) 5678" value="{{ old('phone3') }}">
+                        <input type="text" name="phone3" placeholder="(例) 5678" value="{{ old('phone3', $validatedContact['phone3'] ?? '') }}">
                     </div>
                     <div class="form__error">
                         @error("phone1")
@@ -94,7 +94,7 @@
                 <label for="address">住所</label>
                 <div class="input-area">
                     <input type="text" id="address" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3"
-                        value="{{ old('address') }}">
+                        value="{{ old('address', $validatedContact["address"] ?? '') }}">
                     <div class="form__error">
                         @error("address")
                             {{ $message }}
@@ -106,7 +106,7 @@
                 <div for="building">建物名</div>
                 <div class="input-area">
                     <input type="text" id="building" name="building" placeholder="例：〇〇マンション101"
-                        value="{{ old('building') }}">
+                        value="{{ old('building', $validatedContact["building"] ?? '') }}">
                     <div class="form__error">
                         @error("building")
                             {{ $message }}
@@ -133,7 +133,7 @@
             <div class="form-group required">
                 <label for="inquiry_content">お問い合わせ内容</label>
                 <div class="input-area">
-                    <textarea id="inquiry_content" name="detail" placeholder="お問い合わせ内容をご記入ください">{{ old("detail") }}</textarea>
+                    <textarea id="inquiry_content" name="detail" placeholder="お問い合わせ内容をご記入ください">{{ old('detail', $validatedContact['detail'] ?? '') }}</textarea>
                     <div class="form__error">
                         @error("detail")
                             {{ $message }}

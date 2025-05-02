@@ -35,6 +35,7 @@ class ContactRequest extends FormRequest
             "building" => "string|max:255|nullable",
             "category_id" => "required|string",
             "detail" => "required|string|max:120",
+            "tel" => "string|max:20|nullable",
         ];
     }
 
@@ -56,7 +57,8 @@ class ContactRequest extends FormRequest
             "detail.required" => "お問い合わせ内容を入力してください",
             "detail.max" => "お問い合わせ内容は120文字以内で入力してください",
             "category_id.required" => "お問い合せの種類を選択してください",
-
+            "tell.string" => "電話番号は文字列で入力してください",
+            "tell.max" => "電話番号は20文字以内で入力してください",
         ];
         
     }
