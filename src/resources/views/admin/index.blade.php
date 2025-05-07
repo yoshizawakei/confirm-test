@@ -7,7 +7,7 @@
 @section("content")
 <header class="header">
     <div class="header__inner">
-        <a href="#" class="logo">Fashionably Late</a>
+        <a href="/admin" class="logo">Fashionably Late</a>
     </div>
     <div class="header__link">
         <form action="/logout" method="post">

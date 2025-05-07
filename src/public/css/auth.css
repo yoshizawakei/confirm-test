@@ -5,6 +5,7 @@ body {
 
 .register-header {
     text-align: center;
+    font-weight: normal;
     margin: 30px;
     font-family: "Domine", serif;
     color: #928178;
