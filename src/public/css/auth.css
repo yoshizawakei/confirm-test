@@ -1,11 +1,14 @@
 /* auth.css */
 body {
-    background-color: #faf0e6;
+    background-color: #eae5e3;
 }
 
 .register-header {
     text-align: center;
-    margin: 40px;
+    margin: 30px;
+    font-family: "Domine", serif;
+    color: #928178;
+    font-size: 30px;
 }
 
 .register {
@@ -29,8 +32,8 @@ body {
 .register-form label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
-    /* font-weight: bold; */
+    color: #928178;
+    font-family: "Domine", serif;
     font-size: 19px;
 }
 
@@ -38,10 +41,13 @@ body {
 .register-form input[type="email"],
 .register-form input[type="password"] {
     width: calc(100% - 12px);
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border: none;
+    background-color: #e7e7eb;
     border-radius: 4px;
     font-size: 1em;
+    color: #928178;
+    font-family: "Domine", serif;
 }
 
 .button {
@@ -49,18 +55,17 @@ body {
 }
 
 .register-form button.register-button {
-    background-color: #8b4513;
-    /* 茶色 */
+    background-color: #928178;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     width: 100px;
+    font-family: "Domine", serif;
 }
 
 .register-form button.register-button:hover {
-    background-color: #a0522d;
-    /* 濃い茶色 */
+    background-color: #d3cbc6;
 }

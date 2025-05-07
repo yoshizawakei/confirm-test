@@ -55,7 +55,7 @@
             <div class="form-group required">
                 <label for="email">メールアドレス</label>
                 <div class="input-area">
-                    <input type="email" id="email" name="email" placeholder="例：mail@example.com" value="{{ old('email', $validatedContact['email'] ?? '') }}">
+                    <input type="email" id="email" name="email" placeholder="例：test@example.com" value="{{ old('email', $validatedContact['email'] ?? '') }}">
                     <div class="form__error">
                         @error("email")
                             {{ $message }}
@@ -67,11 +67,11 @@
                 <label for="phone">電話番号</label>
                 <div class="input-area">
                     <div class="phone-inputs">
-                        <input type="text" name="phone1" placeholder="(例) 090" value="{{ old('phone1', $validatedContact['phone1'] ?? '') }}">
+                        <input type="text" name="phone1" placeholder="080" value="{{ old('phone1', $validatedContact['phone1'] ?? '') }}">
                         <span class="hyphen">-</span>
-                        <input type="text" name="phone2" placeholder="(例) 1234" value="{{ old('phone2', $validatedContact['phone2'] ?? '') }}">
+                        <input type="text" name="phone2" placeholder="1234" value="{{ old('phone2', $validatedContact['phone2'] ?? '') }}">
                         <span class="hyphen">-</span>
-                        <input type="text" name="phone3" placeholder="(例) 5678" value="{{ old('phone3', $validatedContact['phone3'] ?? '') }}">
+                        <input type="text" name="phone3" placeholder="5678" value="{{ old('phone3', $validatedContact['phone3'] ?? '') }}">
                     </div>
                     <div class="form__error">
                         @error("phone1")
@@ -105,7 +105,7 @@
             <div class="form-group">
                 <div for="building">建物名</div>
                 <div class="input-area">
-                    <input type="text" id="building" name="building" placeholder="例：〇〇マンション101"
+                    <input type="text" id="building" name="building" placeholder="例：千駄ヶ谷マンション101"
                         value="{{ old('building', $validatedContact["building"] ?? '') }}">
                     <div class="form__error">
                         @error("building")
@@ -117,7 +117,7 @@
             <div class="form-group required">
                 <label for="inquiry_type">お問い合わせの種類</label>
                 <div class="input-area">
-                    <select id="inquiry_type" name="category_id">
+                    <select class="inquiry_type" name="category_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category["id"] }}">{{ $category["content"] }}</option>
@@ -133,7 +133,7 @@
             <div class="form-group required">
                 <label for="inquiry_content">お問い合わせ内容</label>
                 <div class="input-area">
-                    <textarea id="inquiry_content" name="detail" placeholder="お問い合わせ内容をご記入ください">{{ old('detail', $validatedContact['detail'] ?? '') }}</textarea>
+                    <textarea class="inquiry_content" name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail', $validatedContact['detail'] ?? '') }}</textarea>
                     <div class="form__error">
                         @error("detail")
                             {{ $message }}

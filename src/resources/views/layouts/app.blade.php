@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="{{ asset("css/sanitize.css") }}">
     <link rel="stylesheet" href="{{ asset("css/common.css") }}">
     @yield('css')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="header">
     <div class="header__inner">
-        <a href="" class="logo">FashionablyLate</a>
+        <a href="#" class="logo">Fashionably Late</a>
     </div>
 </header>
 

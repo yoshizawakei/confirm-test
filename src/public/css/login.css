@@ -1,10 +1,13 @@
 body {
-    background-color: #faf0e6;
+    background-color: #eae5e3;
 }
 
 .login-header {
     text-align: center;
-    margin: 40px;
+    margin: 30px;
+    font-family: "Domine", serif;
+    color: #928178;
+    font-size: 30px;
 }
 
 .login {
@@ -14,6 +17,8 @@ body {
     background-color: white;
     border-radius: 3px;
     border: rgba(0, 0, 0, 0.1) 1px solid;
+    font-family: "Domine", serif;
+    color: #928178;
 }
 
 .login-form .form-group {
@@ -29,18 +34,21 @@ body {
 .login-form label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
-    /* font-weight: bold; */
-    font-size: 19px;
+    color: #928178;
+    font-family: "Domine", serif;
+    font-size: 18px;
 }
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
     width: calc(100% - 12px);
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border: none;
+    background-color: #e7e7eb;
     border-radius: 4px;
     font-size: 1em;
+    color: #928178;
+    font-family: "Domine", serif;
 }
 
 .button {
@@ -48,18 +56,17 @@ body {
 }
 
 .login-form button.login-button {
-    background-color: #8b4513;
-    /* 茶色 */
+    background-color: #928178;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     width: 120px;
+    font-family: "Domine", serif;
 }
 
 .login-form button.login-button:hover {
-    background-color: #a0522d;
-    /* 濃い茶色 */
+    background-color: #d3cbc6;
 }

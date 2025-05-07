@@ -1,9 +1,11 @@
 .confirm-title {
-    font-size: 28px;
+    font-size: 30px;
     color: #333;
     padding: 20px 0;
     margin: 0 auto;
     text-align: center;
+    font-family: "Domine", serif;
+    color: #928178;
 }
 
 .confirm-form-wrapper {
@@ -37,45 +39,38 @@
 }
 
 .confirm-form th {
+    font-family: "Domine", serif;
     border-right: 1px solid #ddd;
     color: white;
-    background-color: #777;
+    background-color: #928178;
     text-align: left;
-    padding: 10px 40px;
+    padding: 10px 30px;
     width: 30%;
 }
 
 .confirm-form td {
-    color: #333;
     text-align: left;
     padding: 10px 40px;
     width: 70%;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
 }
 
 /* td内の全てのinputタグの枠線を消す */
 .confirm-form td input {
     border: none;
-    /* 枠線をなくす */
     background-color: transparent;
-    /* 背景を透明にする（必要に応じて） */
     padding: 10px 0;
-    /* 上下のpaddingを調整 */
-    font-size: 20px;
-    /* フォントサイズをtdに合わせる */
-    color: #333;
-    /* 文字色をtdに合わせる */
+    font-size: 18px;
+    color: #928178;
     width: 100%;
-    /* 幅をtdいっぱいに広げる */
     box-sizing: border-box;
-    /* paddingを含めて幅を計算 */
+    font-family: "Domine", serif;
 }
 
 /* 電話番号のinputタグの幅を調整 */
 .confirm-form .form-item td input[type="text"]:not(:first-child) {
     width: calc((100% - 20px) / 3);
-    /* 幅を再調整 */
 }
 
 .form-item{
@@ -94,14 +89,15 @@
 }
 
 .submit-button {
-    background-color: #777;
+    background-color: #928178;
     color: #fff;
     padding: 12px 20px;
     border: none;
     border-radius: 1px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     width: 100px;
+    font-family: "Domine", serif;
 }
 
 .edit-button-group {
@@ -110,14 +106,15 @@
 
 .edit-button {
     background-color: white;
-    color: #333;
+    color: #928178;
     padding: 12px 20px;
     border: none;
     border-radius: 1px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     width: 100px;
     text-decoration: underline;
+    font-family: "Domine", serif;
 }
 
 .submit-button:hover {
